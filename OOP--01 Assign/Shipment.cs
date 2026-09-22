@@ -15,19 +15,19 @@ namespace OOP__01_Assign_
 
         public Shipment(string trackingCode) 
         {
-            _TrackingCode = trackingCode;
-            _Description = "Unknown";
-            _Weight =  1;
-            _DeliveryFee = 50;
+            TrackingCode = trackingCode;
+            Description = "Unknown";
+            Weight =  1;
+            DeliveryFee = 50;
             Destination = new DeliveryAddress();
         }
 
         public Shipment(string trackingCode, string description, double weight, double deliveryFee, DeliveryAddress destination) 
         {
-            _TrackingCode = trackingCode;
-            _Description = description;
-            _Weight = weight;
-            _DeliveryFee = deliveryFee;
+            TrackingCode = trackingCode;
+            Description = description;
+            Weight = weight;
+            DeliveryFee = deliveryFee;
             Destination = destination;
         }
 
@@ -37,7 +37,7 @@ namespace OOP__01_Assign_
 
             private set 
             {
-                if(!string.IsNullOrEmpty(value))
+                if(!string.IsNullOrWhiteSpace(value))
                 {
                     _TrackingCode = value;
                 }
@@ -88,10 +88,28 @@ namespace OOP__01_Assign_
 
         public double EstimatedCost
         {
-            get { return DeliveryFee + (Weight * 5); }
+            get { return _DeliveryFee + (_Weight * 5); }
         }
 
-        
+        public void UpdateDeliveryFee(double newFee)
+        {
+            if(newFee > 0)
+            {
+                _DeliveryFee = newFee;
+            }
+
+        }
+
+        public void PrintShipment()
+        {
+            Console.WriteLine($"Tracking Code ; {_TrackingCode}");
+            Console.WriteLine($"Description : {_Description}");
+            Console.WriteLine($"Weight ; {_Weight}");
+            Console.WriteLine($"Delivery fee : {_DeliveryFee} ");
+            Console.WriteLine($"Destination : {Destination.GetFullAddress()}");
+            Console.WriteLine($"Estimated Cost : {EstimatedCost}");
+        }
+
 
     }
 }
