@@ -18,6 +18,23 @@
             //    3- 
 
             // b) using propeties --> (set) and make validation 
+
+            //---------------------------------------------------------------------------------------------------
+
+            //Part 02 : Practical
+
+            DeliveryAddress DA = new DeliveryAddress("Maadi", "Elnasr", 44);
+
+            string address = DA.GetFullAddress();
+            //Console.WriteLine(address);
+
+            DeliveryAddress DA02 = DA;
+            DA02.City = "Dokki";
+            DA02.Street = "kkk";
+            DA02.BuildingNumber = 50;
+
+            Console.WriteLine(DA.GetFullAddress());
+            Console.WriteLine(DA02.GetFullAddress());
         }
     }
 }
