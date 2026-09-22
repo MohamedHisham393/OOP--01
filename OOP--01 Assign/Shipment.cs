@@ -13,7 +13,23 @@ namespace OOP__01_Assign_
 
         public DeliveryAddress Destination { get; set; }
 
-       
+        public Shipment(string trackingCode) 
+        {
+            _TrackingCode = trackingCode;
+            _Description = "Unknown";
+            _Weight =  1;
+            _DeliveryFee = 50;
+            Destination = new DeliveryAddress();
+        }
+
+        public Shipment(string trackingCode, string description, double weight, double deliveryFee, DeliveryAddress destination) 
+        {
+            _TrackingCode = trackingCode;
+            _Description = description;
+            _Weight = weight;
+            _DeliveryFee = deliveryFee;
+            Destination = destination;
+        }
 
         public string TrackingCode
         {
