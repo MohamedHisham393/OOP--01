@@ -19,7 +19,7 @@ namespace OOP__01_Assign_
 
         public string GetFullAddress()
         {
-            return $"City : {City} , Street : {Street} , BuildingNumber : {BuildingNumber} ";
+            return $"{BuildingNumber}  {Street} Street  {City}";
         }
     }
 }

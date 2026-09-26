@@ -102,9 +102,9 @@ namespace OOP__01_Assign_
 
         public void PrintShipment()
         {
-            Console.WriteLine($"Tracking Code ; {_TrackingCode}");
+            Console.WriteLine($"Tracking Code : {_TrackingCode}");
             Console.WriteLine($"Description : {_Description}");
-            Console.WriteLine($"Weight ; {_Weight}");
+            Console.WriteLine($"Weight : {_Weight}");
             Console.WriteLine($"Delivery fee : {_DeliveryFee} ");
             Console.WriteLine($"Destination : {Destination.GetFullAddress()}");
             Console.WriteLine($"Estimated Cost : {EstimatedCost}");
